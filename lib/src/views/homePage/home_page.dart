@@ -15,8 +15,8 @@ class _HomePageState extends State<HomePage> {
         var post = controller.posts[index];
         // Container do feed
         return Container(
-          color: Colors.amber,
-          margin: const EdgeInsets.all(10),
+          color: Colors.blue[500],
+          margin: const EdgeInsets.all(5),
           padding: const EdgeInsets.all(10),
           // Container => Usuario
           child: Column(
@@ -46,30 +46,25 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(post.title!),
+                    Text(
+                      post.title!,
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ],
                 ),
               ),
-              // TextButton(
-              //   style: TextButton.styleFrom(
-              //       backgroundColor: Colors.red,
-              //       elevation: 15,
-              //       shadowColor: Colors.green),
-              //   child: Text(
-              //     'Mais detalhes da publicação',
-              //     style: TextStyle(
-              //       color: Colors.black,
-              //     ),
-              //   ),
-              //   onPressed: () {},
-              // ),
+
               // Este container englobará a segunda requisição de outra API
               Container(
                 child: Image.network("https://via.placeholder.com/600/92c952"),
               ),
               TextButton(
-                  onPressed: () {},
-                  child: Text('Clique aqui para mais detalhes'))
+                onPressed: () {},
+                child: Text(
+                  'Clique aqui para mais detalhes',
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
             ],
           ),
         );
