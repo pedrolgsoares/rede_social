@@ -6,6 +6,6 @@ main() {
 
   test("Deve retornar uma lista de PostModel", () async {
     final list = await respository.retorneDados();
-    print(list[3].userId);
+    print(list);
   });
 }
