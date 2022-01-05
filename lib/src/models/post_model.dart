@@ -21,4 +21,9 @@ class PostModel {
     data['body'] = this.body;
     return data;
   }
+
+  convertInt(int valor) {
+    String valorConvertido = valor.toString();
+    return valorConvertido;
+  }
 }

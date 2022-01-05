@@ -1,19 +1,19 @@
+import 'package:flutter/widgets.dart';
 import 'package:rede_social/src/models/post_model.dart';
 import 'package:rede_social/src/repositories/post_repository.dart';
 
 class HomeController {
   List<PostModel> posts = [];
   final repository = PostRepository();
-
-  HomeState state = HomeState.start;
+  final state = ValueNotifier<HomeState>(HomeState.start);
 
   Future start() async {
-    state = HomeState.loading;
+    state.value = HomeState.loading;
     try {
       posts = await repository.retorneDados();
-      state = HomeState.sucess;
+      state.value = HomeState.sucess;
     } catch (e) {
-      state = HomeState.error;
+      state.value = HomeState.error;
     }
   }
 }
