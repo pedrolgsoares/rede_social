@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social/views/widgets/card_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,7 +7,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('InstaBook'),
+        title: const Text('App postagens'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -32,16 +31,14 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-          child: ListView(
-        children: <Widget>[
-          CardView(),
-          CardView(),
-          CardView(),
-          CardView(),
-          CardView(),
-        ],
-      )),
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text("Postagem: $index"),
+          );
+        },
+      ),
     );
   }
 }

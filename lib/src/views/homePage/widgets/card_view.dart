@@ -8,26 +8,24 @@ class CardView extends StatelessWidget {
     return Container(
       width: 120,
       height: 250,
-      margin: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(10),
       color: Colors.grey,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           // Container da imagem
-          Container(
-            width: 500,
+          SizedBox(
+            width: 150,
             height: 150,
             child: Image.asset('assets/images/paisagem.jpg'),
           ),
           // Container da legenda
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: const [
-                Text('Legenda da publicação'),
-                Icon(Icons.verified),
-              ],
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Text('Legenda da publicação'),
+              Icon(Icons.verified),
+            ],
           )
         ],
       ),
