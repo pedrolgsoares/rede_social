@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:rede_social/src/controllers/home_controller.dart';
+import 'package:rede_social/src/views/detailsPage/details_page.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
+
   _sucess() {
     return ListView.builder(
       itemCount: controller.posts.length,
@@ -18,7 +22,6 @@ class _HomePageState extends State<HomePage> {
           color: Colors.blue[500],
           margin: const EdgeInsets.all(5),
           padding: const EdgeInsets.all(10),
-          // Container => Usuario
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -26,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.account_circle,
                       color: Colors.white,
                       size: 36.0,
@@ -47,20 +50,23 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      post.title!,
-                      style: TextStyle(color: Colors.white),
+                      "Imagem do albúm: " + post.convertInt(post.albumId!),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   ],
                 ),
               ),
-
-              // Este container englobará a segunda requisição de outra API
-              Container(
-                child: Image.network("https://via.placeholder.com/600/92c952"),
-              ),
+              Image.network(post.thumbnailUrl!),
               TextButton(
-                onPressed: () {},
-                child: Text(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            DetailsPage(controller.posts[index])),
+                  );
+                },
+                child: const Text(
                   'Clique aqui para mais detalhes',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -74,7 +80,7 @@ class _HomePageState extends State<HomePage> {
 
   _error() {
     return const Center(
-      child: const Text("Tente novamente"),
+      child: Text("Tente novamente"),
     );
   }
 
@@ -105,7 +111,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller.start();
   }
@@ -130,6 +135,22 @@ class _HomePageState extends State<HomePage> {
               ListTile(
                 leading: const Icon(Icons.person),
                 title: const Text("Minha conta"),
+                onTap: () {
+                  Navigator.pop(context);
+                  //Navegar para outra página
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text("Configurações"),
+                onTap: () {
+                  Navigator.pop(context);
+                  //Navegar para outra página
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text("Sair do app"),
                 onTap: () {
                   Navigator.pop(context);
                   //Navegar para outra página

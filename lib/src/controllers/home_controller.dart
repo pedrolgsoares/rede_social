@@ -4,13 +4,13 @@ import 'package:rede_social/src/repositories/post_repository.dart';
 
 class HomeController {
   List<PostModel> posts = [];
-  final repository = PostRepository();
+  final repositoryPost = PostRepository();
   final state = ValueNotifier<HomeState>(HomeState.start);
 
   Future start() async {
     state.value = HomeState.loading;
     try {
-      posts = await repository.retorneDados();
+      posts = await repositoryPost.retorneDados();
       state.value = HomeState.sucess;
     } catch (e) {
       state.value = HomeState.error;

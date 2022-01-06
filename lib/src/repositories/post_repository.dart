@@ -3,7 +3,6 @@ import 'package:rede_social/src/models/post_model.dart';
 
 class PostRepository {
   final dio = Dio();
-  // final url = 'https://jsonplaceholder.typicode.com/posts';
   final url = 'https://jsonplaceholder.typicode.com/photos';
 
   Future<List<PostModel>> retorneDados() async {
