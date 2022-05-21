@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:rede_social/src/models/post_model.dart';
-import 'package:rede_social/src/repositories/post_repository.dart';
+import 'package:rede_social/src/app/models/post_model.dart';
+import 'package:rede_social/src/app/repositories/post_repository.dart';
 
 class HomeController {
   List<PostModel> posts = [];

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:rede_social/src/models/post_model.dart';
+import 'package:rede_social/src/app/models/post_model.dart';
 
 class PostRepository {
   final dio = Dio();

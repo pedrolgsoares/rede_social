@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rede_social/src/controllers/home_controller.dart';
-import 'package:rede_social/src/views/detailsPage/details_page.dart';
+import 'package:rede_social/src/app/controllers/home_controller.dart';
+import 'package:rede_social/src/app/views/detailsPage/details_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,24 +25,22 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Icon(
-                      Icons.account_circle,
-                      color: Colors.white,
-                      size: 36.0,
-                    ),
-                    Text(
-                      " Usuário: " + post.convertInt(post.id!),
-                      style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.account_circle,
+                    color: Colors.white,
+                    size: 36.0,
+                  ),
+                  Text(
+                    " Usuário: " + post.convertInt(post.id!),
+                    style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ],
               ),
               Container(
                 padding: const EdgeInsets.all(15),

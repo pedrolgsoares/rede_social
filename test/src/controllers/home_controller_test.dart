@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rede_social/src/controllers/home_controller.dart';
+import 'package:rede_social/src/app/controllers/home_controller.dart';
 
 main() {
   final controller = HomeController();
