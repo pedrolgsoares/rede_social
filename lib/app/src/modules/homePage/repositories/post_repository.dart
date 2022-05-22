@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:rede_social/src/app/models/post_model.dart';
+import 'package:rede_social/app/src/models/post_model.dart';
 
 class PostRepository {
   final dio = Dio();
@@ -7,13 +7,11 @@ class PostRepository {
 
   Future<List<PostModel>> retorneDados() async {
     final response = await dio.get(url);
-    final list = response.data as List;
 
-    List<PostModel> posts = [];
-    for (var json in list) {
-      final post = PostModel.fromJson(json);
-      posts.add(post);
-    }
+    List<PostModel> posts = (response.data as List)
+      .map((e) => PostModel.fromJson(e))
+      .toList();
+
 
     return posts;
   }
