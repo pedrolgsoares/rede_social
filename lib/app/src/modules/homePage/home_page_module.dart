@@ -6,8 +6,7 @@ import 'package:rede_social/app/src/modules/homePage/repositories/post_repositor
 class HomePageModule extends Module{
    @override
   final List<Bind> binds = [
-    Bind.lazySingleton((i) => PostRepository()),
-    Bind.lazySingleton((i) => HomeController(i.get<PostRepository>())),
+   
   ];
    @override
   final List<ModularRoute> routes = [

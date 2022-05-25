@@ -16,10 +16,11 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
+    // Rotas filhos
     ModuleRoute(Modular.initialRoute, module: HomePageModule()),
     
-    ModuleRoute('/detalhes', module: DetailsPageModule()),
+    //ModuleRoute('/detalhes', module: DetailsPageModule()),
 
-    //ModuleRoute(DetailsPage.route, module: DetailsPageModule()),
+    ModuleRoute(DetailsPage.route, module: DetailsPageModule()),
   ];
 }

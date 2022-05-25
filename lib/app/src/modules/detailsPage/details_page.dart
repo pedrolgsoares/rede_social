@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:rede_social/app/src/models/post_model.dart';
 
 class DetailsPage extends StatelessWidget {
+  static const String route = '/detalhes';
   final PostModel postModel;
   const DetailsPage({Key? key, required this.postModel}) : super(key: key);
   @override
