@@ -1,7 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rede_social/app/src/modules/homePage/controllers/home_controller.dart';
 import 'package:rede_social/app/src/modules/homePage/home_page.dart';
-import 'package:rede_social/app/src/modules/homePage/repositories/post_repository.dart';
 
 class HomePageModule extends Module{
    @override

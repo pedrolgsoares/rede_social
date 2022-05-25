@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:rede_social/app/src/models/post_model.dart';
 import 'package:rede_social/app/src/modules/homePage/controllers/home_controller.dart';
-import 'package:rede_social/app/src/modules/detailsPage/details_page.dart';
 import 'package:rede_social/app/src/shared/status.dart';
 
 class HomePage extends StatefulWidget {
